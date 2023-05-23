@@ -571,6 +571,12 @@ open class FSPagerView: UIView,UICollectionViewDataSource,UICollectionViewDelega
         
     }
     
+    func setContentOfffsetAnimationDuration(with value: CGFloat) {
+        if collectionView.value(forKeyPath: "contentOffsetAnimationDuration") != nil {
+            collectionView.setValue(value, forKeyPath: "contentOffsetAnimationDuration")
+        }
+    }
+    
     fileprivate func startTimer() {
         guard self.automaticSlidingInterval > 0 && self.timer == nil else {
             return
